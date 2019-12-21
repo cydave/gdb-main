@@ -30,12 +30,12 @@ gdb.execute("break *%s" % entrypoint)
 gdb.execute("continue")
 gdb.execute("stepi")
 
-reg = '$rdi'
+reg = "$rdi"
 while True:
     output = gdb.execute("x/i $pc", to_string=True)
-    if 'edi' in output:
-        reg = '$edi'
-    if 'call' in output:
+    if "edi" in output:
+        reg = "$edi"
+    if "call" in output:
         break
     gdb.execute("stepi")
 
